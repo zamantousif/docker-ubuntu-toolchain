@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
     cmake \
     git \
     libgtk2.0-dev \
-	pkg-config \
+    pkg-config \
     libcairo2-dev \
     libgraphicsmagick1-dev \
     libpng-dev \
