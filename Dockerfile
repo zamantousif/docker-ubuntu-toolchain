@@ -4,6 +4,11 @@
 FROM ubuntu:19.04
 LABEL maintainer="Mohammed Tousif Zaman"
 
+# Set the timezone
+RUN echo 'Etc/UTC' > /etc/timezone && \
+    ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime && \
+    apt-get update && apt-get install -q -y tzdata && rm -rf /var/lib/apt/lists/*
+
 # Install build tools, cmake and IO2D library - Cairo, graphicsmagick, libpng, Boost, OpenSSL, remote tools for 
 # C++ dev on CLion
 RUN apt-get update \
@@ -25,8 +30,10 @@ RUN apt-get update \
         tar \
         python \        
     && apt-get clean
-    
+
+# Install QT5, QTCreator 
 RUN apt-get update \
+    RUNLEVEL=1 DEBIAN_FRONTEND=noninteractive && \
     && apt-get install -y\
         qt5-default \
         qtcreator \
