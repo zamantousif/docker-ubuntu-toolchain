@@ -27,10 +27,11 @@ RUN apt-get update \
     && apt-get clean
     
 RUN apt-get update \
-    && apt-get install qt5-default \
-       qtcreator \
-       qt5-doc \
-       qt5-doc-html \
-       qtbase5-doc-html \
-       qtbase5-examples \
+    && apt-get install -y\
+        qt5-default \
+        qtcreator \
+        qt5-doc \
+        qt5-doc-html \
+        qtbase5-doc-html \
+        qtbase5-examples \
     && apt-get clean   
