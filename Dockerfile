@@ -1,3 +1,15 @@
+# Remote development using Docker on CLion
+# Build and run:
+#   docker build -t clion/remote-cpp-env:0.5 -f Dockerfile
+#   docker run -d --cap-add sys_ptrace -p127.0.0.1:2222:22 --name clion_remote_env clion/remote-cpp-env:0.5
+#   ssh-keygen -f "$HOME/.ssh/known_hosts" -R "[localhost]:2222"
+#
+# stop:
+#   docker stop clion_remote_env
+# 
+# ssh credentials (test user):
+#   user@password 
+
 # Get the base Ubuntu image from Docker Hub
 FROM ubuntu:19.04
 LABEL maintainer="Mohammed Tousif Zaman"
