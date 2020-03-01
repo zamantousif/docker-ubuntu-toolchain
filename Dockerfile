@@ -23,5 +23,14 @@ RUN apt-get update \
         clang \
         rsync \
         tar \
-        python \
+        python \        
     && apt-get clean
+    
+RUN apt-get update \
+    && qt5-default \
+       qtcreator \
+       qt5-doc \
+       qt5-doc-html \
+       qtbase5-doc-html \
+       qtbase5-examples \
+       
