@@ -33,7 +33,7 @@ RUN apt-get update \
 
 # Install QT5, QTCreator 
 RUN apt-get update \
-    RUNLEVEL=1 DEBIAN_FRONTEND=noninteractive && \
+    RUNLEVEL=1 DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y\
         qt5-default \
         qtcreator \
