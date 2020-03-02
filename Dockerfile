@@ -34,13 +34,13 @@ RUN apt-get update \
     && apt-get clean
 
 # Install QT5, QTCreator 
-RUN apt-get update \
-    && RUNLEVEL=1 DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y\
-        qt5-default \
-        qtcreator \
-        qt5-doc \
-        qt5-doc-html \
-        qtbase5-doc-html \
-        qtbase5-examples
+# RUN apt-get update \
+#     && RUNLEVEL=1 DEBIAN_FRONTEND=noninteractive \
+#     && apt-get install -y\
+#         qt5-default \
+#         qtcreator \
+#         qt5-doc \
+#         qt5-doc-html \
+#         qtbase5-doc-html \
+#         qtbase5-examples
         
