@@ -42,5 +42,5 @@ RUN apt-get update \
         qt5-doc \
         qt5-doc-html \
         qtbase5-doc-html \
-        qtbase5-examples \
-    && apt-get clean   
+        qtbase5-examples
+        
