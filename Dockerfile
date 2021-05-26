@@ -6,13 +6,6 @@ LABEL maintainer="Mohammed Tousif Zaman" \
         email="zamantousif@gmail.com" \
         version="0.0.1" 
 
-# Set the timezone
-RUN echo 'Etc/UTC' > /etc/timezone \
-    && ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime \
-    && apt-get update \
-    && apt-get install -q -y tzdata \
-    && rm -rf /var/lib/apt/lists/*
-
 # Install build tools, cmake and IO2D library - Cairo, graphicsmagick, libpng, Boost, OpenSSL, remote tools for 
 # C++ dev on CLion
 RUN apt-get update \
