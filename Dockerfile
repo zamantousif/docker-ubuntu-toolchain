@@ -2,13 +2,16 @@
 
 # Get the base Ubuntu image from Docker Hub
 FROM ubuntu:19.04
-LABEL maintainer="Mohammed Tousif Zaman"
-        
-ARG DEBIAN_FRONTEND=noninteractive
+LABEL maintainer="Mohammed Tousif Zaman" \
+        email="zamantousif@gmail.com" \
+        version="0.0.1" 
 
 # Set the timezone
-ENV TZ=Europe/Helsinki
-RUN apt-get install -y tzdata
+RUN echo 'Etc/UTC' > /etc/timezone \
+    && ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime \
+    && apt-get update \
+    && apt-get install -q -y tzdata \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install build tools, cmake and IO2D library - Cairo, graphicsmagick, libpng, Boost, OpenSSL, remote tools for 
 # C++ dev on CLion
